@@ -21,9 +21,11 @@
 		session範圍 值： <%=session.getAttribute("Key")%> <br>
 		application範圍 值： <%=application.getAttribute("Key")%> <br>
 		
-	<%
-		request.getRequestDispatcher("/scope2.jsp").forward(request, response);
-	%>
+<%-- 	<% --%>
+<!-- // 		request.getRequestDispatcher("/scope2.jsp").forward(request, response); -->
+<%-- 	%> --%>
+	
+	<jsp:forward page="/scope2.jsp"></jsp:forward>
 
 </body>
 </html>
