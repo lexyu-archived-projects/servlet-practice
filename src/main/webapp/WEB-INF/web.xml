@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+	version="4.0">
+	<display-name>ServletPR</display-name>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+	</welcome-file-list><!-- -->
+	
+	<!-- context-param 上下文參數 (屬於整個web專案), 可配置多組 -->
+	<context-param>
+		<param-name>username</param-name>
+		<param-value>context</param-value>
+	</context-param>
+
+	<servlet>
+		<servlet-name>HelloServlet</servlet-name>
+		<servlet-class>pk.HelloServlet</servlet-class>
+		<!-- 初始化參數 -->
+		<init-param>
+			<!-- 參數名 -->
+			<param-name>username</param-name>
+			<!-- 參數值 -->
+			<param-value>root</param-value>
+		</init-param>
+		<!-- 初始化參數，可配多組-->
+		<init-param>
+			<!-- 參數名 -->
+			<param-name>url</param-name>
+			<!-- 參數值 -->
+			<param-value>jdbc:mysql://localhost:3306/test</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>HelloServlet</servlet-name>
+		<url-pattern>/hello</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>HelloServlet2</servlet-name>
+		<servlet-class>pk.HelloServlet2</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>HelloServlet2</servlet-name>
+		<url-pattern>/hello2</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>HelloServlet3</servlet-name>
+		<servlet-class>pk.HelloServlet3</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>HelloServlet3</servlet-name>
+		<url-pattern>/hello3</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>ContextServlet</servlet-name>
+		<servlet-class>pk.ContextServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ContextServlet</servlet-name>
+		<url-pattern>/contextServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>ContextServletMap</servlet-name>
+		<servlet-class>pk.ContextServletMap</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ContextServletMap</servlet-name>
+		<url-pattern>/contextServletMapUrl</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>RequestAPIServlet</servlet-name>
+		<servlet-class>pk.RequestAPIServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>RequestAPIServlet</servlet-name>
+		<url-pattern>/RequestAPIServletUrl</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>ParameterServlet</servlet-name>
+		<servlet-class>pk.ParameterServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ParameterServlet</servlet-name>
+		<url-pattern>/ParameterServletUrl</url-pattern>
+	</servlet-mapping>
+	
+<!-- 	<servlet> -->
+<!-- 		<servlet-name>forwardC</servlet-name> -->
+<!-- 		<servlet-class>pk.forwardC</servlet-class> -->
+<!-- 	</servlet> -->
+<!-- 	<servlet-mapping> -->
+<!-- 		<servlet-name>forwardC</servlet-name> -->
+<!-- 		<url-pattern>/forwardc</url-pattern> -->
+<!-- 	</servlet-mapping> -->
+
+	<!-- 尚硅谷專案練習 start -->
+  
+
+
+   
+	<!-- 尚硅谷專案練習 end -->
+
+</web-app>
