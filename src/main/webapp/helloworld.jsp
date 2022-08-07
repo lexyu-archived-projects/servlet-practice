@@ -1,5 +1,6 @@
+<%@ page import="java.util.*"%>
 <%@ page language="java" contentType="text/html; charset=BIG5"
-	pageEncoding="BIG5"%>
+	pageEncoding="BIG5" errorPage="/404­¶­±¸ô®|"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,6 +9,11 @@
 </head>
 <body>
 	<h1>Hello World</h1>
-	<h3>Server Time is <%= new java.util.Date() %></h3>
+	
+	<% int i = 12 / 0;%>
+
+	<h3>
+		Server Time is
+		<%=new java.util.Date()%></h3>
 </body>
 </html>
