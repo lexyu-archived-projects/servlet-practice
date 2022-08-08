@@ -9,7 +9,11 @@ public class Person {
 	private String[] phones;
 	private List<String> cities;
 	private Map<String,Object> map;
-		
+	
+	public int getAge() {
+        return 18;
+    }
+	
 	public Person() {
 	}
 
