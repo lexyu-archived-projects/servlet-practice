@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>  
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>    
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,7 +8,7 @@
 <title>EL Object</title>
 </head>
 <body>
-			
+	
 	取得 request 參數 username 的值：${param.username} <br/>
 	取得 request 參數 password 的值：${param.password} <br/>
 	<hr>
