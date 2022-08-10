@@ -6,12 +6,16 @@
 	<display-name>ServletPR</display-name>
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>
-	</welcome-file-list><!-- -->
+	</welcome-file-list>
 	
 	<!-- context-param 上下文參數 (屬於整個web專案), 可配置多組 -->
 	<context-param>
 		<param-name>username</param-name>
 		<param-value>context</param-value>
+	</context-param>
+	<context-param>
+		<param-name>url</param-name>
+		<param-value>jdbc:mysql://test</param-value>
 	</context-param>
 
 	<servlet>
