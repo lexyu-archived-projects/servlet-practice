@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>AjaxServlet</title>
+</head>
+<body>
+
+	<button onclick="ajaxRequest()">Ajax Request</button>
+	<button onclick="ajaxRequest()">Ajax Request</button>
+	<button onclick="ajaxRequest()">Ajax Request</button>
+	<button onclick="ajaxRequest()">Ajax Request</button>
+	<button onclick="ajaxRequest()">Ajax Request</button>
+
+	<div id="div1">
+	
+	</div>
+	
+	<table border="1">
+		<tr>
+			<td>第一行第一列</td>
+			<td>第二行第一列</td>
+		</tr>
+		<tr>
+			<td>第一行第二列</td>
+			<td>第二行第二列</td>
+		</tr>
+	</table>
+	
+	<script type="text/javascript">
+	// 這裡使用JS 發起 Ajax請求，存取 Server 的 AjaxServlet 中的 javaScriptAjax
+		function ajaxRequest(){
+			// 1. 創建 XMLHttpRequest
+			let xmlhttprequest = new XMLHttpRequest();
+			// 2. 呼叫 open 方法 設置 Request Parameter
+			xmlhttprequest.open("POST",
+					"http://localhost:8080/ServletPR/ajaxServlet?action=javaScriptAjax"
+							, true);
+			// 4. send 綁定 onreadystatechange 事件， 處理 Request 完成後的操作
+			xmlhttprequest.onreadystatechange = function () {
+				if (xmlhttprequest.readyState == 4 && xmlhttprequest.status == 200) {
+					// 測試同步 open(... ,false)
+// 					alert("收到Server response" + xmlhttprequest.responseText);
+					var jsonObj = JSON.parse(xmlhttprequest.responseText);
+					// 把 Response的數據 顯示在頁面上
+					document.getElementById("div1").innerHTML 
+					= "編號: " + jsonObj.id + " , 姓名: " + jsonObj.name;
+					// document.getElementById("div1").innerHTML = xmlhttprequest.responseText
+				}
+			}
+			// 3. 呼叫 send 方法 發送 Request
+			xmlhttprequest.send();
+			
+			alert("我是最後一行 Code");
+		}
+	</script>
+	
+	
+</body>
+</html>
