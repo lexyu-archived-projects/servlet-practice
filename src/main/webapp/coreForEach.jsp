@@ -1,3 +1,6 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="model.Student2"%>
+<%@page import="java.util.List"%>
 <%@page import="java.util.Map"%>
 <%@page import="java.util.HashMap"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -116,6 +119,37 @@
 		<h5>${entry.value}</h5><br>
 		<h4>${entry.key} = ${entry.value}</h4><br>	
 	</c:forEach>
+	<%
+        List<Student2> studentList = new ArrayList<Student2>();
+        for (int i = 1; i <= 10; i++) {
+            studentList.add(new Student2(i, "username"+i ,"pass"+i, 18+i, "phone"+i));
+        }
+        request.setAttribute("stus", studentList);
+    %>
+    <table>
+    	 <tr>
+            <th>No</th>
+            <th>Name</th>
+            <th>password</th>
+            <th>age</th>
+            <th>tel</th>
+            <th>operation</th>
+        </tr>
+    <c:forEach begin="2" end="7" step="2" varStatus="status" items="${requestScope.stus}" var="stu">
+    	<tr>
+            <td>${stu.id}</td>
+            <td>${stu.username}</td>
+            <td>${stu.password}</td>
+            <td>${stu.age}</td>
+            <td>${stu.phone}</td>
+       	    <td>${status}</td>    
+            <th><button>刪除</button><button>修改</button></th>
+        </tr>
+    </c:forEach>
+    </table>
+         <button>儲存</button>
+    
+	
 	
 	
 </body>
