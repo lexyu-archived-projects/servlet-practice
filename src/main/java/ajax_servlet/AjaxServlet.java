@@ -69,7 +69,6 @@ public class AjaxServlet extends BaseServlet {
 		res.getWriter().write(personJsonString);
     }
 
-
     protected void jQueryGetJSON(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
     	System.out.println("jQueryGetJSON Request 過來了");
 		Person3 person3 = new Person3(4, "Diana");
@@ -79,7 +78,6 @@ public class AjaxServlet extends BaseServlet {
 		res.getWriter().write(personJsonString);
     }
     
-
     protected void jQuerySerialize(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
     	System.out.println("jQuerySerialize Request 過來了");
 		
