@@ -1,6 +1,9 @@
 package ajax_servlet;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -8,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 import model.Person3;
 
@@ -33,10 +37,17 @@ public class AjaxServlet extends BaseServlet {
 
 	protected void jQueryAjax(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		System.out.println("jQueryAjax Request 過來了");
-		Person3 person3 = new Person3(1, "Lex");
+		Person3 person3 = new Person3(1, "Lex1");
+		Person3 person32 = new Person3(2, "Lex2");
+		Person3 person33 = new Person3(3, "Lex3");
+		List<Person3> plist = new ArrayList<Person3>();
+		plist.add(person3);
+		plist.add(person32);
+		plist.add(person33);
 		// Java物件 轉成 JSON 字串
 		Gson gson = new Gson();	
-		String personJsonString = gson.toJson(person3);		
+//		String personJsonString = gson.toJson(person3);
+		String personJsonString = gson.toJson(plist);
 		res.getWriter().write(personJsonString);
 	}
 	
@@ -58,7 +69,6 @@ public class AjaxServlet extends BaseServlet {
 		res.getWriter().write(personJsonString);
     }
 
-
     protected void jQueryGetJSON(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
     	System.out.println("jQueryGetJSON Request 過來了");
 		Person3 person3 = new Person3(4, "Diana");
@@ -68,7 +78,6 @@ public class AjaxServlet extends BaseServlet {
 		res.getWriter().write(personJsonString);
     }
     
-
     protected void jQuerySerialize(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
     	System.out.println("jQuerySerialize Request 過來了");
 		
