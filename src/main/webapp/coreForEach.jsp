@@ -34,6 +34,7 @@
 		1. 注意不可使用 html 標籤
 		2. when的父標籤是 choose
 	--%>
+	
 	<% request.setAttribute("height", 18); %>
 	<c:choose>
 		<c:when test="${requestScope.height > 190 }"> 
